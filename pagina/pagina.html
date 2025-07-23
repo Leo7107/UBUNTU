@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaTech Studio</title>
+  <style>
+    :root {
+      --main-bg: linear-gradient(135deg, #0f172a, #1e293b);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent: #38bdf8;
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background: rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: #e0f2fe;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: var(--accent);
+      color: #0f172a;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .contact {
+      padding: 4rem 2rem;
+      background: #1e293b;
+    }
+
+    .contact h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #7dd3fc;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #334155;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    .contact-form button {
+      background: var(--accent);
+      color: #0f172a;
+      border: none;
+      padding: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      background: #0f172a;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NovaTech</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Transformamos tu visión en tecnología</h2>
+    <p>Diseño y desarrollo de soluciones digitales modernas para empresas visionarias. Conectamos ideas con innovación.</p>
+    <a href="#contacto" class="btn">Contáctanos</a>
+  </section>
+
+  <section class="cards" id="servicios">
+    <div class="card">
+      <h3>Desarrollo Web</h3>
+      <p>Páginas rápidas, seguras y adaptadas a cualquier dispositivo.</p>
+    </div>
+    <div class="card">
+      <h3>Aplicaciones Móviles</h3>
+      <p>Apps funcionales para Android e iOS con diseño UX profesional.</p>
+    </div>
+    <div class="card">
+      <h3>Consultoría & Seguridad</h3>
+      <p>Auditorías, seguridad en la nube y optimización de procesos digitales.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <h2>¿Listo para comenzar?</h2>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Te responderemos pronto.'); this.reset();">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo electrónico" required />
+      <textarea placeholder="Tu mensaje..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 NovaTech Studio. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
